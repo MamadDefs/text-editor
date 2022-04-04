@@ -2,220 +2,203 @@
 #include <iostream>
 #include <math.h>
 
-/** 
-  * Assignment 2 for COSE213 Data Structures
-  *
-  * 2022. 4. 4  Won-Ki Jeong (wkjeong@korea.ac.kr)
-  *
-  */
+/**
+ * Assignment 2 for COSE213 Data Structures
+ *
+ * 2022. 4. 4  Won-Ki Jeong (wkjeong@korea.ac.kr)
+ *
+ */
 
 /*
  * Iterator
  */
-template<class T>
-typename DoublyLinkedList<T>::Iterator& 
-DoublyLinkedList<T>::Iterator::operator++() 
-{ 
+/*
+template <class T>
+typename DoublyLinkedList<T>::Iterator &
+DoublyLinkedList<T>::Iterator::operator++()
+{
 	// ToDo
-	
 }
 
-template<class T>
-typename DoublyLinkedList<T>::Iterator  
-DoublyLinkedList<T>::Iterator::operator++(int) 
-{ 
+template <class T>
+typename DoublyLinkedList<T>::Iterator
+DoublyLinkedList<T>::Iterator::operator++(int)
+{
 	// ToDo
-	
 }
 
-template<class T>
-typename DoublyLinkedList<T>::Iterator& 
-DoublyLinkedList<T>::Iterator::operator--() 
-{ 
+template <class T>
+typename DoublyLinkedList<T>::Iterator &
+DoublyLinkedList<T>::Iterator::operator--()
+{
 	// ToDo
-	 
 }
 
-template<class T>
-typename DoublyLinkedList<T>::Iterator  
-DoublyLinkedList<T>::Iterator::operator--(int) 
-{ 
+template <class T>
+typename DoublyLinkedList<T>::Iterator
+DoublyLinkedList<T>::Iterator::operator--(int)
+{
 	// ToDo
-	
 }
-
-
+*/
 /*
  * Reverse Iterator
  */
-template<class T>
-typename DoublyLinkedList<T>::Reverse_Iterator&
-DoublyLinkedList<T>::Reverse_Iterator::operator++() 
-{ 
+/*
+template <class T>
+typename DoublyLinkedList<T>::Reverse_Iterator &
+DoublyLinkedList<T>::Reverse_Iterator::operator++()
+{
 	// ToDo
-	
 }
 
-template<class T>
+template <class T>
 typename DoublyLinkedList<T>::Reverse_Iterator
 DoublyLinkedList<T>::Reverse_Iterator::operator++(int)
-{ 
+{
 	// ToDo
-	
 }
 
-template<class T>
-typename DoublyLinkedList<T>::Reverse_Iterator&
-DoublyLinkedList<T>::Reverse_Iterator::operator--() 
-{ 
+template <class T>
+typename DoublyLinkedList<T>::Reverse_Iterator &
+DoublyLinkedList<T>::Reverse_Iterator::operator--()
+{
 	// ToDo
-	
 }
 
-template<class T>
+template <class T>
 typename DoublyLinkedList<T>::Reverse_Iterator
 DoublyLinkedList<T>::Reverse_Iterator::operator--(int)
-{ 
+{
 	// ToDo
-	
 }
-
+*/
 /*
  * Doubly linked list
  */
 // Default constructor
-template<class T>
+template <class T>
 DoublyLinkedList<T>::DoublyLinkedList()
 {
-	// ToDo
-	
+	this->first = NULL;
 }
 
 // Copy constructor
-template<class T>
-DoublyLinkedList<T>::DoublyLinkedList(const DoublyLinkedList& source)
+template <class T>
+DoublyLinkedList<T>::DoublyLinkedList(const DoublyLinkedList &source)
 {
-	//ToDo
+	// ToDo
 }
-
 
 // Destructor
-template<class T>
+template <class T>
 DoublyLinkedList<T>::~DoublyLinkedList()
 {
-	//ToDo
+	// ToDo
 }
-
-
+/*
 // Assignment operator
-template<class T>
-DoublyLinkedList<T>& 
-DoublyLinkedList<T>::operator = (const DoublyLinkedList<T>& source)
+template <class T>
+DoublyLinkedList<T> &
+DoublyLinkedList<T>::operator=(const DoublyLinkedList<T> &source)
 {
-	//ToDo	
-	
+	// ToDo
 }
-
-
 
 // Total number of nodes in the list
-template<class T>
-int 
-DoublyLinkedList<T>::Size() const
+template <class T>
+int DoublyLinkedList<T>::Size() const
 {
-	//ToDo
-	
+	// ToDo
 }
-
-
+*/
 // Insert a new node to the list as the first node
 // Return the pointer of new node
-template<class T>
-typename DoublyLinkedList<T>::Iterator 
-//typename Iterator
-DoublyLinkedList<T>::InsertFirst(const T& data)
+template <class T>
+typename DoublyLinkedList<T>::Iterator
+// typename Iterator
+DoublyLinkedList<T>::InsertFirst(const T &data)
 {
-	//ToDo
-	
+	if (first != NULL)
+	{
+		printf("worked");
+	}
+	else
+	{
+		DoublyLinkedListNode<T> *newNode = new DoublyLinkedListNode<T>();
+		newNode->data = data;
+		newNode->rlink = NULL;
+		newNode->llink = NULL;
+		this->first = newNode;
+	}
 }
-
-
+/*
 // Insert a new node to the list as the last node
 // Return the pointer of new node
-template<class T>
+template <class T>
 typename DoublyLinkedList<T>::Iterator
-DoublyLinkedList<T>::InsertLast(const T & data)
+DoublyLinkedList<T>::InsertLast(const T &data)
 {
-	//ToDo
+	// ToDo
 }
 
-
+/*
 // Insert a new node to the list after pos
 // Return the pointer of new node
-template<class T>
-typename DoublyLinkedList<T>::Iterator 
-DoublyLinkedList<T>::InsertNext(DoublyLinkedList<T>::Iterator pos, const T & data)
+template <class T>
+typename DoublyLinkedList<T>::Iterator
+DoublyLinkedList<T>::InsertNext(DoublyLinkedList<T>::Iterator pos, const T &data)
 {
-	//ToDo
+	// ToDo
 }
-
 
 // Insert a new node to the list before pos
 // Return the pointer of new node
-template<class T>
-typename DoublyLinkedList<T>::Iterator 
-DoublyLinkedList<T>::InsertPrev(Iterator, const T & data)
+template <class T>
+typename DoublyLinkedList<T>::Iterator
+DoublyLinkedList<T>::InsertPrev(Iterator, const T &data)
 {
-	//ToDo
+	// ToDo
 }
-
 
 // Delete node at pos in the list
-template<class T>
-bool 
-DoublyLinkedList<T>::DeleteNode(Iterator pos)
+template <class T>
+bool DoublyLinkedList<T>::DeleteNode(Iterator pos)
 {
-	//ToDo
+	// ToDo
 }
-
 
 // Delete first node
-template<class T>
-bool 
-DoublyLinkedList<T>::DeleteFirst()
+template <class T>
+bool DoublyLinkedList<T>::DeleteFirst()
 {
-	//ToDo
+	// ToDo
 }
-
 
 // Delete last node
-template<class T>
-bool 
-DoublyLinkedList<T>::DeleteLast()
+template <class T>
+bool DoublyLinkedList<T>::DeleteLast()
 {
-	//ToDo
+	// ToDo
 }
-
-
-template<class T>
-void 
-DoublyLinkedList<T>::Print(bool reverse)
+*/
+template <class T>
+void DoublyLinkedList<T>::Print(bool reverse)
 {
-	if(reverse)
+	if (reverse)
 	{
-		for(Reverse_Iterator rit = rBegin(); rit!=rEnd(); rit++)
-		{	
+		for (Reverse_Iterator rit = rBegin(); rit != rEnd(); rit++)
+		{
 			std::cout << *rit << ", ";
 		}
 	}
-	else 
-	{		
-		for(Iterator it = Begin(); it!=End(); it++)
-		{	
+	else
+	{
+		for (Iterator it = Begin(); it != End(); it++)
+		{
 			std::cout << *it << ", ";
-		}		
+		}
 	}
-	
+
 	std::cout << std::endl;
 }
-
