@@ -12,33 +12,36 @@
 /*
  * Iterator
  */
-/*
+
 template <class T>
 typename DoublyLinkedList<T>::Iterator &
 DoublyLinkedList<T>::Iterator::operator++()
 {
-	// ToDo
+	this->current = this->current->rlink;
+	return *this;
 }
 
 template <class T>
 typename DoublyLinkedList<T>::Iterator
 DoublyLinkedList<T>::Iterator::operator++(int)
 {
-	// ToDo
+	DoublyLinkedList<T>::Iterator temp(*this);
+	++(*this);
+	return temp;
 }
-
+/*
 template <class T>
 typename DoublyLinkedList<T>::Iterator &
 DoublyLinkedList<T>::Iterator::operator--()
 {
-	// ToDo
+
 }
 
 template <class T>
 typename DoublyLinkedList<T>::Iterator
 DoublyLinkedList<T>::Iterator::operator--(int)
 {
-	// ToDo
+
 }
 */
 /*
@@ -49,28 +52,31 @@ template <class T>
 typename DoublyLinkedList<T>::Reverse_Iterator &
 DoublyLinkedList<T>::Reverse_Iterator::operator++()
 {
-	// ToDo
+	this->current = this->current->llink;
+	return *this;
 }
 
 template <class T>
 typename DoublyLinkedList<T>::Reverse_Iterator
 DoublyLinkedList<T>::Reverse_Iterator::operator++(int)
 {
-	// ToDo
+	DoublyLinkedList<T>::Reverse_Iterator temp = *this;
+	++(*this);
+	return temp;
 }
 
 template <class T>
 typename DoublyLinkedList<T>::Reverse_Iterator &
 DoublyLinkedList<T>::Reverse_Iterator::operator--()
 {
-	// ToDo
+
 }
 
 template <class T>
 typename DoublyLinkedList<T>::Reverse_Iterator
 DoublyLinkedList<T>::Reverse_Iterator::operator--(int)
 {
-	// ToDo
+
 }
 */
 /*
@@ -80,7 +86,9 @@ DoublyLinkedList<T>::Reverse_Iterator::operator--(int)
 template <class T>
 DoublyLinkedList<T>::DoublyLinkedList()
 {
-	this->first = NULL;
+	this->first = new NodeType();
+	this->first->llink = nullptr;
+	this->first->rlink = nullptr;
 }
 
 // Copy constructor
@@ -119,18 +127,12 @@ typename DoublyLinkedList<T>::Iterator
 // typename Iterator
 DoublyLinkedList<T>::InsertFirst(const T &data)
 {
-	if (first != NULL)
-	{
-		printf("worked");
-	}
-	else
-	{
-		DoublyLinkedListNode<T> *newNode = new DoublyLinkedListNode<T>();
-		newNode->data = data;
-		newNode->rlink = NULL;
-		newNode->llink = NULL;
-		this->first = newNode;
-	}
+	NodeType *newNode = new NodeType();
+	newNode->data = data;
+	newNode->rlink = first;
+	newNode->llink = first;
+	first->rlink = newNode;
+	first->llink = newNode;
 }
 /*
 // Insert a new node to the list as the last node
@@ -185,6 +187,7 @@ bool DoublyLinkedList<T>::DeleteLast()
 template <class T>
 void DoublyLinkedList<T>::Print(bool reverse)
 {
+	/*
 	if (reverse)
 	{
 		for (Reverse_Iterator rit = rBegin(); rit != rEnd(); rit++)
@@ -193,12 +196,12 @@ void DoublyLinkedList<T>::Print(bool reverse)
 		}
 	}
 	else
+	{*/
+	for (Iterator it = Begin(); it != End(); it++)
 	{
-		for (Iterator it = Begin(); it != End(); it++)
-		{
-			std::cout << *it << ", ";
-		}
+		std::cout << *it << ", ";
 	}
+	//}
 
 	std::cout << std::endl;
 }

@@ -19,12 +19,12 @@ int main()
 	list.InsertFirst(10);
 	// std::cout << "List 1 Size : " << list.Size() << std::endl;
 	list.Print();
-	std::cout << "--" << std::endl;
-
-	// list.InsertFirst( 20 );
-	// std::cout << "List 1 Size : " << list.Size() << std::endl;
-	// list.Print();
 	// std::cout << "--" << std::endl;
+
+	// list.InsertFirst(20);
+	//  std::cout << "List 1 Size : " << list.Size() << std::endl;
+	//  list.Print();
+	//  std::cout << "--" << std::endl;
 
 	// list.InsertFirst( 30 );
 	// std::cout << "List 1 Size : " << list.Size() << std::endl;
