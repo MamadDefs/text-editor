@@ -17,34 +17,34 @@ int main()
 	DoublyLinkedList<int> list;
 
 	list.InsertFirst(10);
-	// std::cout << "List 1 Size : " << list.Size() << std::endl;
+	std::cout << "List 1 Size : " << list.Size() << std::endl;
 	list.Print();
-	// std::cout << "--" << std::endl;
+	std::cout << "--" << std::endl;
 
-	// list.InsertFirst(20);
-	//  std::cout << "List 1 Size : " << list.Size() << std::endl;
-	//  list.Print();
-	//  std::cout << "--" << std::endl;
+	list.InsertFirst(20);
+	std::cout << "List 1 Size : " << list.Size() << std::endl;
+	list.Print();
+	std::cout << "--" << std::endl;
 
-	// list.InsertFirst( 30 );
-	// std::cout << "List 1 Size : " << list.Size() << std::endl;
-	// list.Print();
-	// std::cout << "--" << std::endl;
+	list.InsertFirst(30);
+	std::cout << "List 1 Size : " << list.Size() << std::endl;
+	list.Print();
+	std::cout << "--" << std::endl;
 
-	// list.InsertFirst( 40 );
-	// std::cout << "List 1 Size : " << list.Size() << std::endl;
-	// list.Print();
-	// std::cout << "--" << std::endl;
+	list.InsertFirst(40);
+	std::cout << "List 1 Size : " << list.Size() << std::endl;
+	list.Print();
+	std::cout << "--" << std::endl;
 
-	// list.InsertLast( 50 );
-	// std::cout << "List 1 Size : " << list.Size() << std::endl;
-	// list.Print();
-	// std::cout << "--" << std::endl;
+	list.InsertLast(50);
+	std::cout << "List 1 Size : " << list.Size() << std::endl;
+	list.Print();
+	std::cout << "--" << std::endl;
 
-	// list.InsertLast( 60 );
-	// std::cout << "List 1 Size : " << list.Size() << std::endl;
-	// list.Print();
-	// std::cout << "--" << std::endl;
+	list.InsertLast(60);
+	std::cout << "List 1 Size : " << list.Size() << std::endl;
+	list.Print();
+	std::cout << "--" << std::endl;
 
 	// // assignment operator test
 	// DoublyLinkedList<int> list2;
