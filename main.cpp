@@ -15,7 +15,6 @@ int main()
 	// 1. Test Doubly Linked List
 	//
 	DoublyLinkedList<int> list;
-
 	list.InsertFirst(10);
 	std::cout << "List 1 Size : " << list.Size() << std::endl;
 	list.Print();
@@ -46,38 +45,38 @@ int main()
 	list.Print();
 	std::cout << "--" << std::endl;
 
-	// // assignment operator test
-	// DoublyLinkedList<int> list2;
-	// list2 = list;
+	// assignment operator test
+	DoublyLinkedList<int> list2;
+	list2 = list;
 
-	// std::cout << "List 2 Size : " << list2.Size() << std::endl;
-	// list2.Print();
-	// std::cout << "--" << std::endl;
+	std::cout << "List 2 Size : " << list2.Size() << std::endl;
+	list2.Print();
+	std::cout << "--" << std::endl;
 
 	// copy constructor test
-	// DoublyLinkedList<int> list3 = list;
+	DoublyLinkedList<int> list3 = list;
 
-	// std::cout << "List 3 Size : " << list3.Size() << std::endl;
-	// list3.Print();
-	// std::cout << "--" << std::endl;
+	std::cout << "List 3 Size : " << list3.Size() << std::endl;
+	list3.Print();
+	std::cout << "--" << std::endl;
 
-	// list.DeleteFirst();
-	// std::cout << "List 1 Size : " << list.Size() << std::endl;
-	// list.Print();
-	// std::cout << "--" << std::endl;
+	list.DeleteFirst();
+	std::cout << "List 1 Size : " << list.Size() << std::endl;
+	list.Print();
+	std::cout << "--" << std::endl;
 
-	// list.DeleteLast();
-	// std::cout << "List 1 Size : " << list.Size() << std::endl;
-	// list.Print();
-	// std::cout << "--" << std::endl;
+	list.DeleteLast();
+	std::cout << "List 1 Size : " << list.Size() << std::endl;
+	list.Print();
+	std::cout << "--" << std::endl;
 
-	// std::cout << "List 2 Size : " << list2.Size() << std::endl;
-	// list2.Print();
-	// std::cout << "--" << std::endl;
+	std::cout << "List 2 Size : " << list2.Size() << std::endl;
+	list2.Print();
+	std::cout << "--" << std::endl;
 
-	// std::cout << "List 3 Size : " << list3.Size() << std::endl;
-	// list3.Print();
-	// std::cout << "--" << std::endl;
+	std::cout << "List 3 Size : " << list3.Size() << std::endl;
+	list3.Print();
+	std::cout << "--" << std::endl;
 
 	// // insert middle test
 	// DoublyLinkedList<int>::Iterator it = list3.Begin();

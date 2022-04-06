@@ -93,32 +93,49 @@ template <class T>
 DoublyLinkedList<T>::DoublyLinkedList()
 {
 	this->first = new NodeType();
-	this->first->rlink = nullptr;
-	this->first->llink = nullptr;
+	this->first->rlink = this->first;
+	this->first->llink = this->first;
 }
 
 // Copy constructor
 template <class T>
 DoublyLinkedList<T>::DoublyLinkedList(const DoublyLinkedList &source)
 {
-	// ToDo
+	this->first = new NodeType();
+	this->first->rlink = this->first;
+	this->first->llink = this->first;
+	NodeType *curr = source.first->rlink;
+	while (curr != source.first)
+	{
+		this->InsertLast(curr->data);
+		curr = curr->rlink;
+	}
 }
 
 // Destructor
 template <class T>
 DoublyLinkedList<T>::~DoublyLinkedList()
 {
-	// ToDo
 }
-/*
+
 // Assignment operator
 template <class T>
 DoublyLinkedList<T> &
 DoublyLinkedList<T>::operator=(const DoublyLinkedList<T> &source)
 {
-	// ToDo
+	// deleting the left list and replace it with right list
+	while (this->DeleteFirst())
+		;
+	// inserting nodes
+	NodeType *curr = source.first->rlink;
+	while (curr != source.first)
+	{
+		this->InsertLast(curr->data);
+		curr = curr->rlink;
+	}
+	return *this;
 }
-*/
+
 // Total number of nodes in the list
 template <class T>
 int DoublyLinkedList<T>::Size() const
@@ -138,7 +155,7 @@ DoublyLinkedList<T>::InsertFirst(const T &data)
 {
 	NodeType *newNode = new NodeType();
 	newNode->data = data;
-	if (first->rlink == nullptr)
+	if (first->rlink == this->first)
 	{
 		newNode->rlink = first;
 		newNode->llink = first;
@@ -163,7 +180,7 @@ DoublyLinkedList<T>::InsertLast(const T &data)
 {
 	NodeType *newNode = new NodeType();
 	newNode->data = data;
-	if (first->rlink == nullptr)
+	if (first->rlink == this->first)
 	{
 		newNode->rlink = first;
 		newNode->llink = first;
@@ -205,21 +222,53 @@ bool DoublyLinkedList<T>::DeleteNode(Iterator pos)
 {
 	// ToDo
 }
-
+*/
 // Delete first node
 template <class T>
 bool DoublyLinkedList<T>::DeleteFirst()
 {
-	// ToDo
+	if (this->Size() == 1)
+	{
+		NodeType *tempNode = this->first->rlink;
+		this->first->rlink = this->first;
+		this->first->llink = this->first;
+		delete tempNode;
+		return true;
+	}
+	else if (this->Size() > 1)
+	{
+		NodeType *tempNode = this->first->rlink;
+		this->first->rlink->rlink->llink = this->first;
+		this->first->rlink = this->first->rlink->rlink;
+		delete tempNode;
+		return true;
+	}
+	return false;
 }
 
 // Delete last node
 template <class T>
 bool DoublyLinkedList<T>::DeleteLast()
 {
-	// ToDo
+	if (this->Size() == 1)
+	{
+		NodeType *tempNode = this->first->rlink;
+		this->first->rlink = this->first;
+		this->first->llink = this->first;
+		delete tempNode;
+		return true;
+	}
+	else if (this->Size() > 1)
+	{
+		NodeType *tempNode = this->first->llink;
+		this->first->llink->llink->rlink = this->first;
+		this->first->llink = this->first->llink->llink;
+		delete tempNode;
+		return true;
+	}
+	return false;
 }
-*/
+
 template <class T>
 void DoublyLinkedList<T>::Print(bool reverse)
 {
