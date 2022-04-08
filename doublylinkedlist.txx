@@ -116,6 +116,9 @@ DoublyLinkedList<T>::DoublyLinkedList(const DoublyLinkedList &source)
 template <class T>
 DoublyLinkedList<T>::~DoublyLinkedList()
 {
+	while (this->DeleteFirst())
+		;
+	delete first;
 }
 
 // Assignment operator
@@ -197,32 +200,52 @@ DoublyLinkedList<T>::InsertLast(const T &data)
 	return newNode;
 }
 
-/*
 // Insert a new node to the list after pos
 // Return the pointer of new node
 template <class T>
 typename DoublyLinkedList<T>::Iterator
 DoublyLinkedList<T>::InsertNext(DoublyLinkedList<T>::Iterator pos, const T &data)
 {
-	// ToDo
+	NodeType *newNode = new NodeType();
+	newNode->data = data;
+	newNode->rlink = pos.GetNodePointer()->rlink;
+	newNode->llink = pos.GetNodePointer();
+	newNode->rlink->llink = newNode;
+	newNode->llink->rlink = newNode;
+	return ++pos;
 }
 
 // Insert a new node to the list before pos
 // Return the pointer of new node
 template <class T>
 typename DoublyLinkedList<T>::Iterator
-DoublyLinkedList<T>::InsertPrev(Iterator, const T &data)
+DoublyLinkedList<T>::InsertPrev(Iterator pos, const T &data)
 {
-	// ToDo
+	NodeType *newNode = new NodeType();
+	newNode->data = data;
+	newNode->rlink = pos.GetNodePointer();
+	newNode->llink = pos.GetNodePointer()->llink;
+	newNode->rlink->llink = newNode;
+	newNode->llink->rlink = newNode;
+	return ++pos;
 }
 
 // Delete node at pos in the list
 template <class T>
 bool DoublyLinkedList<T>::DeleteNode(Iterator pos)
 {
-	// ToDo
+	if (pos == this->first)
+		return false;
+	else
+	{
+		NodeType *tempNode = pos.GetNodePointer();
+		pos.GetNodePointer()->rlink->llink = pos.GetNodePointer()->llink;
+		pos.GetNodePointer()->llink->rlink = pos.GetNodePointer()->rlink;
+		delete tempNode;
+		return true;
+	}
 }
-*/
+
 // Delete first node
 template <class T>
 bool DoublyLinkedList<T>::DeleteFirst()

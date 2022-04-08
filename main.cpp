@@ -78,22 +78,24 @@ int main()
 	list3.Print();
 	std::cout << "--" << std::endl;
 
-	// // insert middle test
-	// DoublyLinkedList<int>::Iterator it = list3.Begin();
-	// std::cout << "First element of list 3 : " << *it << std::endl;
-	// it++;
-	// std::cout << "Second element of list 3 : " << *it << std::endl;
-	// std::cout << "70 will be inserted after " << *it << std::endl;
-	// it = list3.InsertNext(it, 70);
-	// list3.Print();
-	// std::cout << "65 will be inserted before 70" << std::endl;
-	// it = list3.InsertPrev(it, 65);
-	// list3.Print();
-	// it++;it++;it++;
-	// std::cout << *it << " will be deleted" << std::endl;
-	// list3.DeleteNode(it);
-	// list3.Print();
-	// std::cout << "--" << std::endl;
+	// insert middle test
+	DoublyLinkedList<int>::Iterator it = list3.Begin();
+	std::cout << "First element of list 3 : " << *it << std::endl;
+	it++;
+	std::cout << "Second element of list 3 : " << *it << std::endl;
+	std::cout << "70 will be inserted after " << *it << std::endl;
+	it = list3.InsertNext(it, 70);
+	list3.Print();
+	std::cout << "65 will be inserted before 70" << std::endl;
+	it = list3.InsertPrev(it, 65);
+	list3.Print();
+	it++;
+	it++;
+	it++;
+	std::cout << *it << " will be deleted" << std::endl;
+	list3.DeleteNode(it);
+	list3.Print();
+	std::cout << "--" << std::endl;
 
 	//
 	// 2. Test texteditor
