@@ -14,7 +14,7 @@
 typedef DoublyLinkedList<std::string> BufferType;
 
 /* Very simple line text editor */
-/*
+
 class TextEditor
 {
 public:
@@ -25,7 +25,7 @@ public:
 	~TextEditor();
 
 	// Insert a new line after the current position
-	void Insert(const char* s);
+	void Insert(const char *s);
 
 	// Delete the current line
 	void Delete();
@@ -53,5 +53,5 @@ private:
 
 	int currLine;
 };
-*/
+
 #endif

@@ -100,49 +100,49 @@ int main()
 	//
 	// 2. Test texteditor
 	//
-	// TextEditor vi;
+	TextEditor vi;
 
-	// std::cout << "Print out the current buffer:" << std::endl;
-	// vi.PrintAll();
+	std::cout << "Print out the current buffer:" << std::endl;
+	vi.PrintAll();
 
-	// vi.Insert("I am doing my assignment 2.");
-	// vi.Insert("This assignment is not so easy.");
-	// vi.Insert("But it is really fun.");
-	// vi.Insert("I hope I can make it.");
-	// vi.Insert("KU CSE rocks!");
+	vi.Insert("I am doing my assignment 2.");
+	vi.Insert("This assignment is not so easy.");
+	vi.Insert("But it is really fun.");
+	vi.Insert("I hope I can make it.");
+	vi.Insert("KU CSE rocks!");
 
-	// vi.PrintAll();
-	// vi.Print();
+	vi.PrintAll();
+	vi.Print();
 
-	// std::cout << "Move up" << std::endl;
-	// vi.MoveUp();
-	// vi.Print();
+	std::cout << "Move up" << std::endl;
+	vi.MoveUp();
+	vi.Print();
 
-	// std::cout << "Move up" << std::endl;
-	// vi.MoveUp();
-	// vi.Print();
+	std::cout << "Move up" << std::endl;
+	vi.MoveUp();
+	vi.Print();
 
-	// std::cout << "Delete the current line" << std::endl;
-	// vi.Delete();
-	// vi.Print();
+	std::cout << "Delete the current line" << std::endl;
+	vi.Delete();
+	vi.Print();
 
-	// std::cout << "Print out the current buffer:" << std::endl;
-	// vi.PrintAll();
+	std::cout << "Print out the current buffer:" << std::endl;
+	vi.PrintAll();
 
-	// std::cout << "Move down" << std::endl;
-	// vi.MoveDown();
-	// vi.Print();
+	std::cout << "Move down" << std::endl;
+	vi.MoveDown();
+	vi.Print();
 
-	// std::cout << "Insert new line" << std::endl;
-	// vi.Insert("Finally I made it~");
+	std::cout << "Insert new line" << std::endl;
+	vi.Insert("Finally I made it~");
 
-	// std::cout << "Print out the current buffer:" << std::endl;
-	// vi.PrintAll();
+	std::cout << "Print out the current buffer:" << std::endl;
+	vi.PrintAll();
 
 	//
 	// 3. Test interactive mode
 	//
-	// vi.Run();
+	vi.Run();
 
 	return 0;
 }
