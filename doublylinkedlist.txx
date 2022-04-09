@@ -2,13 +2,6 @@
 #include <iostream>
 #include <math.h>
 
-/**
- * Assignment 2 for COSE213 Data Structures
- *
- * 2022. 4. 4  Won-Ki Jeong (wkjeong@korea.ac.kr)
- *
- */
-
 /*
  * Iterator
  */

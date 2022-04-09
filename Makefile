@@ -1,5 +1,5 @@
-assign_2 : main.o texteditor.o
-	g++ main.o texteditor.o -o assign_2
+final : main.o texteditor.o
+	g++ main.o texteditor.o -o final
 
 main.o : main.cpp doublylinkedlist.h doublylinkedlist.txx
 	g++ -c main.cpp -o main.o

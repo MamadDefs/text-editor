@@ -1,13 +1,6 @@
 #ifndef TEXTEDITOR_H
 #define TEXTEDITOR_H
 
-/**
- * Assignment 2 for COSE213 Data Structures
- *
- * 2022. 4. 4  Won-Ki Jeong (wkjeong@korea.ac.kr)
- *
- */
-
 #include "doublylinkedlist.h"
 #include <string>
 
